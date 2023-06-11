@@ -101,6 +101,7 @@ contract Auction {
 
         } else if (msg.sender == highestBidder) {
             // the highest bidder can only withdraw the difference between their bid and the highestBindingBid
+            withdrawAccount = highestBidder;
             if (ownerHasWithdrawn) {
                 withdrawAmount = bidderFund[highestBidder];
             } else {
